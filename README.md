@@ -3,9 +3,15 @@
 
 This Rails app augments [Intercom's Stripe integration](https://docs.intercom.com/integrations/stripe-integration) by allowing you to connect multiple Intercom applications to one Stripe application.
 
+This in no way replaces the core integration, and the core integration is required for this app to work correctly.
+
 This is done by subscribing to any webhook that Stripe push out, and updating the `stripe_data` maintained by Intercom.
 
-To get started locally, download and setup [Ngrok](https://ngrok.com/) to expose your localhost to the web, so you can hook into [Stripe's webhooks](https://stripe.com/docs/webhooks).
+To get started locally, import your users from Stripe in the Intercom Integrations hub for each app you want to work with.
+
+Now download and setup [Ngrok](https://ngrok.com/) to expose your localhost to the web, so you can hook into [Stripe's webhooks](https://stripe.com/docs/webhooks).
+
+Start your local server with `rails s` and point your Ngrok tunnel at `http 3000`.
 
 Add a webhook subscription service to your Slack, choose whatever you want.
 
